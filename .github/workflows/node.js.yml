@@ -30,12 +30,20 @@ jobs:
       - name: npm install(ing)
         run: npm install # or yarn install
       - name: Eslinter
-        run: npm ci # or yarn install
-      - uses: sibiraj-s/action-eslint@v2
-        with:
-          # github-token: ${{ secrets.GITHUB_TOKEN }} # Optional
-          eslint-args: '--ignore-path=.gitignore --quiet'
-          extensions: 'js,jsx,ts,tsx'
-          annotations: true
+        run: npm run lint
       - name: Prettier
-        run: npx prettier --write **/*.js
+        run: npm run prettier
+      - name: Jest - Test
+        run: npm run test
+      - name: Npm run build
+        run: npm run build
+#      - name: Eslinter
+#        run: npm ci # or yarn install
+#      - uses: sibiraj-s/action-eslint@v2
+#        with:
+#          # github-token: ${{ secrets.GITHUB_TOKEN }} # Optional
+#          eslint-args: '--ignore-path=.gitignore --quiet'
+#          extensions: 'js,jsx,ts,tsx'
+#          annotations: true
+#      - name: Prettier
+#        run: npx prettier --write **/*.js3
