@@ -20,12 +20,11 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@main
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@master
+        with:
+          node-version: 15.x
       - name: npm install(ing)
         run: npm install # or yarn install
       - name: Eslinter
