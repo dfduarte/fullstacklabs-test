@@ -30,8 +30,9 @@ jobs:
     - run: npm install
     - name: running lints
     - run: npm run lint
-    - name: Installing and running prettier
+    - name: Installing prettier
     - run: npm install prettier
+    - name: Running prettie
     - run: npm run prettier
     - name: Running the package build.
     - run: npm run build
